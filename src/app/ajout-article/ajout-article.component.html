@@ -1,0 +1,81 @@
+<div class="container ajout_article jumbotron" style="">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+
+            <p class="h3" style="font-family: Georgia, 'Times New Roman', Times, serif;">Voulez-vous poster quelque chose??
+            </p>
+
+            <form [formGroup]="frm_article">
+                <input type="hidden" formControlName="auteur">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Titre de l'article</label>
+                    <input type="text" formControlName="titre_article" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Titre de l'article" autocomplete="off">
+                </div>
+                <div class="alert alert-danger" *ngIf="titre_article.touched && titre_article.invalid">
+                    <div *ngIf="titre_article.errors?.required">
+                        Ce champ ne peut etre vide
+                    </div>
+                    <div *ngIf="titre_article.errors?.minlength">
+                        Le titre doit depasser 10 caracteres
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Description</label>
+                    <textarea formControlName="desc_article" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="alert alert-danger" *ngIf="desc_article.touched && desc_article.invalid">
+                    <div *ngIf="desc_article.errors?.required">
+                        Ce champ ne peut etre vide
+                    </div>
+                    <div *ngIf="desc_article.errors?.minlength">
+                        La description doit depasser 20 caracteres
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Etat</label>
+                    <select class="form-control" id="exampleFormControlSelect1" formControlName="etat_article">
+            <option value="">Que voulez-vous faire??</option>
+            <option value="publier">Publier</option>
+            <option value="Attente">En attente</option>
+          </select>
+                </div>
+                <div class="alert alert-danger" *ngIf="etat_article.touched && etat_article.invalid">
+                    <div *ngIf="etat_article.errors?.required">
+                        Ce champ ne peut etre vide
+                    </div>
+                    <div *ngIf="etat_article.errors?.minlength">
+                        Vous devez coisir une valeur
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" (click)="save_article()" [disabled]="frm_article.invalid">Enregistrer</button>
+                <button type="reset" class="btn btn-info" (click)="annuler()" style="margin:10px">Annuler</button>
+            </form>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <div class="row"></div>
+    <div class="row"></div>
+</div>
+<div class="container-fluid">
+    <app-list-article></app-list-article>
+</div>
+
+
+<div class="modal" tabindex="-1" role="dialog" id="modal" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Succes</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <p>Article <strong><span id="titre"></span></strong> enregistrer avec succes.</p>
+            </div>
+
+        </div>
+    </div>
+</div>

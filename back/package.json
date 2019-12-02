@@ -1,0 +1,26 @@
+{
+    "name": "GNIOOS-TEST-BACK",
+    "version": "1.0.0",
+    "description": "simple api CRUD avec mysql",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "mysql",
+        "crud"
+    ],
+    "author": "azizvrss@gmail.com",
+    "license": "ISC",
+    "dependencies": {
+        "ejs": "^2.6.1",
+        "express": "^4.17.1",
+        "express-session": "^1.15.6",
+        "express-validator": "^6.2.0",
+        "fs": "0.0.1-security",
+        "helmet": "^3.21.1",
+        "mocha": "^6.2.1",
+        "mysql": "^2.16.0",
+        "path": "^0.12.7"
+    }
+}

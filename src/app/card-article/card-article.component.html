@@ -1,0 +1,9 @@
+<div class="card" style="width: 15rem;">
+    <img class="card-img-top" src="../../assets/github.gif" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{titre}}</h5>
+        <p class="card-text">{{description | coupureArticle}}
+        </p>
+        <a class="btn btn-dark" [routerLink]='["",id_article]'><span>Lire la suite</span> </a>
+    </div>
+</div>

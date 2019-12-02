@@ -1,0 +1,17 @@
+<div class="jumbotron" *ngIf="this.db.length == 0">
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h1>Aucune donnee chargee</h1><br><br>
+            <code><strong>Veuillez verifier si le serveur est demarrer puis recharger</strong></code>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+</div>
+<div class="container">
+    <div class="row flex-row">
+        <app-card-article class="flex-row" *ngFor="let article of this.db" [id_article]="article.id_article" [titre_article]="article.nom_article" [description_article]="article.description"></app-card-article>
+    </div>
+</div>

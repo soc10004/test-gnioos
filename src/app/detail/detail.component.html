@@ -1,0 +1,14 @@
+<div class="container-overview" *ngFor="let d_article of this.detail">
+    <img src="../../assets/github.gif" class="rounded float-left" alt="Responsive image">
+    <div class="jumbotron"> <span class="badge badge-success badge-pill">{{d_article.id_article}}</span>
+        <h1 class="display-4">{{d_article.nom_article}}</h1>
+        <p class="lead">{{d_article.description}}</p>
+        <hr class="my-4"> ecrit par <button type="button" class="btn btn-dark btn-sm">{{d_article.email}}
+    </button><br>
+        <code><strong style="float:right;">Date de publication {{d_article.date_creation | date}} </strong> </code>
+    </div>
+
+</div>
+
+<button type="button" class="btn btn-secondary btn-lg btn-block" (click)="aller_article()">retourner aux
+  articles</button>
